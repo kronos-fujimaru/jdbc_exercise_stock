@@ -124,6 +124,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 #### Stock.java（パッケージ：jp.shop.dto）
 
 フィールド
+
 | 可視性 | フィールド名 |
 |:-----:|-------------|
 | private | ID |
