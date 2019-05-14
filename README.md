@@ -4,7 +4,7 @@
 あるショップの在庫管理をするアプリケーションを作成する。以下の機能を実装する。
 
 ##### 1. 在庫一覧表示
-<pre style="background-color:#222; color:#FFF; font-family:MS Gothic">
+```
 【在庫一覧】
 ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 --------------------------------------------------/
@@ -14,11 +14,11 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
-</pre>
+```
 
 ##### 2. 在庫登録機能
 
-<pre style="background-color:#222; color:#FFF; font-family:MS Gothic">
+```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
 <span style="color:orange">1</span>
@@ -33,11 +33,11 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 ----------------------------------------
 
 （在庫一覧表示）
-</pre>
+```
 
 ##### 3. 在庫更新機能
 
-<pre style="background-color:#222; color:#FFF; font-family:MS Gothic">
+```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
 <span style="color:orange">2</span>
@@ -55,11 +55,11 @@ ID：<span style="color:orange">3</span>
 -------------------------------------------------
 
 （在庫一覧表示）
-</pre>
+```
 
 ##### 4. 在庫削除機能
 
-<pre style="background-color:#222; color:#FFF; font-family:MS Gothic">
+```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
 <span style="color:orange">3</span>
@@ -72,17 +72,17 @@ ID：<span style="color:orange">3</span>
 -------------------------------------------------
 
 （在庫一覧表示）
-</pre>
+```
 
 ##### 5. 終了
 
-<pre style="background-color:#222; color:#FFF; font-family:MS Gothic">
+```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
 <span style="color:orange">4</span>
 
 処理を終了します。
-</pre>
+```
 
 <br>
 ## 実装方法
