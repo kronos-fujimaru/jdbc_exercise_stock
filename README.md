@@ -85,12 +85,15 @@ ID：<span style="color:orange">3</span>
 ```
 
 <br>
+
 ## 実装方法
 
 
 <img src="img/map.png" alt="map" width="650">
 
+
 #### STOCKテーブル
+
 sample_shopデータベースを作成し、以下のテーブルを作成する。
 
 | 列名 | データ型 | PK | UK | FK | Not Null | 備考 |
@@ -117,6 +120,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 ```
 
 <br>
+
 #### Stock.java（パッケージ：jp.shop.dto）
 
 フィールド
@@ -131,6 +135,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 ※フィールドに関連するsetter/getterを定義
 
 <br>
+
 #### StockDAO.java（パッケージ：jp.shop.dao）
 
 | 可視性 | メソッド名 | 戻り値 | 引数 | 説明 |
@@ -141,4 +146,5 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 | public | delete   | int | int | 引数のIDに紐づく在庫データを削除する。<br>戻り値として削除件数を返却する。 |
 
 <br>
+
 #### StockMain.java（パッケージ：jp.shop.main）
