@@ -21,13 +21,13 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 ```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
-<span style="color:orange">1</span>
+1
 
 【在庫登録】
 ------ 登録情報を入力してください ------
-商品名：<span style="color:orange">Stapler</span>
-価格：<span style="color:orange">680</span>
-数量：<span style="color:orange">4</span>
+商品名：Stapler
+価格：680
+数量：4
 
 登録が完了しました。
 ----------------------------------------
@@ -40,16 +40,16 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 ```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
-<span style="color:orange">2</span>
+2
 
 【在庫更新】
 ------ 更新するIDを入力してください -------------
-ID：<span style="color:orange">3</span>
+ID：3
 
 ※更新しない項目は未入力でEnterしてください。
 商品名：
-価格：<span style="color:orange">400</span>
-数量：<span style="color:orange">8</span>
+価格：400
+数量：8
 
 更新が完了しました。
 -------------------------------------------------
@@ -62,11 +62,11 @@ ID：<span style="color:orange">3</span>
 ```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
-<span style="color:orange">3</span>
+3
 
 【在庫削除】
 ------ 削除するIDを入力してください -------------
-ID：<span style="color:orange">3</span>
+ID：3
 
 削除が完了しました。
 -------------------------------------------------
@@ -79,7 +79,7 @@ ID：<span style="color:orange">3</span>
 ```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
-<span style="color:orange">4</span>
+4
 
 処理を終了します。
 ```
