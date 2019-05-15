@@ -189,7 +189,7 @@ public class StockDAO {
      * @return List<Stock> 在庫情報
      */
     public ??? findAll() {
-
+        // TODO
     }
 
     /**
@@ -198,7 +198,7 @@ public class StockDAO {
     	 * @return Stock 在庫情報
     	 */
     public ??? findById(???) {
-
+        // TODO
     }
 
     /**
@@ -207,7 +207,7 @@ public class StockDAO {
      * @return int 登録件数
      */
     public ??? create(???) {
-
+        // TODO
     }
 
     /**
@@ -217,7 +217,7 @@ public class StockDAO {
      * @return int 更新件数
      */
     public ??? update(???) {
-
+        // TODO
     }
 
     /**
@@ -226,7 +226,7 @@ public class StockDAO {
      * @return int 削除件数
      */
     public ??? delete(???) {
-
+        // TODO
     }
 }
 ```
