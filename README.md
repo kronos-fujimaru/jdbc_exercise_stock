@@ -146,6 +146,181 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 | public | update   | int | Stock | 引数のStockクラスを元に在庫データを更新する。<br>戻り値として更新件数を返却する。 |
 | public | delete   | int | int | 引数のIDに紐づく在庫データを削除する。<br>戻り値として削除件数を返却する。 |
 
+```java
+package jp.shop.dao;
+
+public class StockDAO {
+
+    private final String URL = "jdbc:mysql://localhost:3306/sample_shop?useSSL=false&serverTimezone=JST";
+    private final String USER = "root";
+    private final String PASSWORD = "kronos";
+
+    /**
+     * findAllメソッド
+     * @return List<Stock> 在庫情報
+     */
+    public ??? findAll() {
+
+    }
+
+    /**
+     * insertメソッド
+     * @param stock 在庫情報
+     * @return int 登録件数
+     */
+    public ??? insert(???) {
+
+    }
+
+    /**
+     * updateメソッド
+     * @param stock 在庫情報
+     * @return int 更新件数
+     */
+    public ??? update(???) {
+
+    }
+
+    /**
+     * deleteメソッド
+     * @param id 更新対象ID
+     * @return int 削除件数
+     */
+    public ??? delete(???) {
+
+    }
+}
+```
+
 <br>
 
 #### StockMain.java（パッケージ：jp.shop.main）
+
+```java
+package jp.shop.main;
+
+import java.util.Scanner;
+
+import jp.shop.dao.StockDAO;
+import jp.shop.dto.Stock;
+
+public class StockMain {
+
+    static StockDAO dao = new StockDAO();
+    static Scanner scan = new Scanner(System.in);
+
+    /**
+     * 在庫登録処理
+     */
+    static void insert() {
+        System.out.println();
+        System.out.println("【在庫登録】");
+        System.out.println("------ 登録情報を入力してください ------");
+
+        System.out.print("商品名：");
+        String item = scan.next();
+        System.out.print("価格：");
+        int price = scan.nextInt();
+        System.out.print("数量：");
+        int quantity = scan.nextInt();
+
+        // TODO Stockクラスのインスタンスを生成し、登録内容をセットする
+        ???
+
+        /*
+         * TODO
+         * StockDAOのinsertメソッドを実行する
+         * 成功時：「登録が完了しました。」
+         * 失敗時：「登録に失敗しました。」
+         */
+        ???
+
+        System.out.println("----------------------------------------");
+        System.out.println();
+
+    }
+
+    /**
+     * 在庫更新処理
+     */
+    static void update() {
+        System.out.println();
+        System.out.println("【在庫更新】");
+        System.out.println("------ 更新するIDを入力してください ------");
+
+        System.out.print("ID：");
+        int id = scan.nextInt();
+
+        System.out.println();
+        System.out.print("商品名：");
+        String item = scan.next();
+        System.out.print("価格：");
+        int price = scan.nextInt();
+        System.out.print("数量：");
+        int quantity = scan.nextInt();
+
+        // TODO Stockクラスのインスタンスを生成し、更新内容をセットする
+        ???
+
+        /*
+         * TODO
+         * StockDAOのupdateメソッドを実行する
+         * 成功時：「更新が完了しました。」
+         * 失敗時：「更新に失敗しました。」
+         */
+        ???
+
+        System.out.println("------------------------------------------");
+        System.out.println();
+
+    }
+
+    /**
+     * 在庫削除処理
+     */
+    static void delete() {
+        System.out.println();
+        System.out.println("【在庫削除】");
+        System.out.println("------ 削除するIDを入力してください ------");
+
+        System.out.print("ID：");
+        int id = scan.nextInt();
+
+        /*
+         * TODO
+         * StockDAOのupdateメソッドを実行する
+         * 成功時：「削除が完了しました。」
+         * 失敗時：「削除に失敗しました。」
+         */
+        ???
+
+        System.out.println("------------------------------------------");
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) {
+
+        while (true) {
+            // TODO 在庫情報取得
+            ???
+
+            System.out.println("【在庫一覧】");
+            System.out.println(String.format("%-5s", "ID") + String.format("%-20s", "ITEM") + String.format("%-10s", "PRICE") + "QUANTITY");
+            System.out.println("--------------------------------------------------");
+            for (Stock item : listItem) {
+                System.out.println(String.format("%-5s", item.getId()) + String.format("%-20s", item.getItem()) +
+                                   String.format("%-10s", item.getPrice()) + item.getQuantity());
+            }
+
+            System.out.println("\n*** 処理番号を選択 ***");
+            System.out.println("1:登録　2:更新　3:削除　4:終了");
+            int select = scan.nextInt();
+
+            // TODO 処理番号に対応した処理を実施
+            ???
+
+        }
+    }
+}
+```
