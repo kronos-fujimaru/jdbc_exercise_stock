@@ -326,6 +326,20 @@ public class StockMain {
 
         /*
          * TODO
+         * 指定したIDが存在するかチェックする
+         * 存在しない場合はメッセージを表示して更新処理を終了する
+         * 「指定したIDの在庫は見つかりません」
+         */
+        Stock oldStock = dao.findById(id);
+        if (oldStock == null) {
+            System.out.println("\r\n指定したIDの在庫は見つかりません");
+            System.out.println("------------------------------------------");
+            System.out.println();
+            return;
+        }
+        
+        /*
+         * TODO
          * StockDAOのupdateメソッドを実行する
          * 成功時：「削除が完了しました」
          * 失敗時：「削除に失敗しました」
