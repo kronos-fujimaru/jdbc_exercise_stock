@@ -37,6 +37,8 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 
 ##### 3. 在庫更新機能
 
+※更新内容はすべて入力される想定
+
 ```
 *** 処理番号を選択 ***
 1:登録　2:更新　3:削除　4:終了
@@ -46,8 +48,8 @@ ID　　　ITEM　　　　　　PRICE　　　QUANTITY
 ------ 更新するIDを入力してください -------------
 ID：3
 
-※更新しない項目は未入力でEnterしてください。
-商品名：
+------ 更新内容を入力してください ---------------
+商品名：Scissors
 価格：400
 数量：8
 
@@ -252,6 +254,7 @@ public class StockMain {
         int id = scan.nextInt();
 
         System.out.println();
+        System.out.println("------ 更新内容を入力してください --------");
         System.out.print("商品名：");
         String item = scan.next();
         System.out.print("価格：");
