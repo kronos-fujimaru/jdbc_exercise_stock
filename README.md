@@ -327,3 +327,5 @@ public class StockMain {
     }
 }
 ```
+
+[解答例](/ans/answer.md)
