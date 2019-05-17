@@ -182,9 +182,15 @@ package jp.shop.dao;
 
 public class StockDAO {
 
-    private final String URL = "jdbc:mysql://localhost:3306/sample_shop?useSSL=false&serverTimezone=JST";
-    private final String USER = "root";
-    private final String PASSWORD = "kronos";
+    protected Connection con;
+
+    /**
+     * コンストラクタ
+     * @param con 接続情報
+     */
+    public StockDAO(Connection con) {
+        this.con = con;
+    }
 
     /**
      * findAllメソッド
@@ -195,10 +201,10 @@ public class StockDAO {
     }
 
     /**
-    	 * findByIdメソッド
-    	 * @param id ID
-    	 * @return Stock 在庫情報
-    	 */
+         * findByIdメソッド
+         * @param id ID
+         * @return Stock 在庫情報
+         */
     public ??? findById(???) {
         // TODO
     }
@@ -237,11 +243,23 @@ public class StockDAO {
 
 **StockMain.java（パッケージ：jp.shop.main）**
 
+| メソッド名 | 戻り値 | 引数 | 説明 |
+|------------|-------|------|---------|
+| showList  | なし | なし | 在庫一覧表示 |
+| create | なし | なし | 在庫登録処理 |
+| update   | なし | なし | 在庫更新処理 |
+| delete   | なし | なし | 在庫削除処理 |
+| main   | なし | String[] | 入力された処理番号により処理を分ける |
+
 コメントでTODOとなっている部分を正しく実装しなさい。
 
 ```java
 package jp.shop.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 import jp.shop.dao.StockDAO;
@@ -249,8 +267,30 @@ import jp.shop.dto.Stock;
 
 public class StockMain {
 
-    private static StockDAO dao = new StockDAO();
+    private static StockDAO dao = null;
     private static Scanner scan = new Scanner(System.in);
+
+    /**
+     * 在庫一覧表示
+     */
+    static void showList() {
+
+        // TODO 在庫情報を全件取得する
+
+
+        System.out.println("【在庫一覧】");
+        System.out.println(String.format("%3s", "ID") + " | " +
+                String.format("%-20s", "ITEM") + " | " +
+                String.format("%8s", "PRICE") + " | " +
+                String.format("%10s", "QUANTITY") + " |");
+        System.out.println("----------------------------------------------------");
+        for (Stock item : listItem) {
+            System.out.println(String.format("%3s", item.getId()) + " | " +
+                    String.format("%-20s", item.getItem()) + " | " +
+                    String.format("%8s", item.getPrice()) + " | " +
+                    String.format("%10s", item.getQuantity()) + " |");
+        }
+    }
 
     /**
      * 在庫登録処理
@@ -268,7 +308,7 @@ public class StockMain {
         int quantity = scan.nextInt();
 
         // TODO Stockクラスのインスタンスを生成し、登録内容をセットする
-        
+
 
         /*
          * TODO
@@ -276,7 +316,7 @@ public class StockMain {
          * 成功時：「登録が完了しました」
          * 失敗時：「登録に失敗しました」
          */
-        
+
 
         System.out.println("----------------------------------------");
         System.out.println();
@@ -299,7 +339,7 @@ public class StockMain {
          * 存在しない場合はメッセージを表示して更新処理を終了する
          * 「指定したIDの在庫は見つかりません」
          */
-        
+
 
         System.out.println();
         System.out.println("------ 更新内容を入力してください --------");
@@ -311,7 +351,7 @@ public class StockMain {
         int quantity = scan.nextInt();
 
         // TODO Stockクラスのインスタンスを生成し、更新内容をセットする
-        
+
 
         /*
          * TODO
@@ -319,7 +359,7 @@ public class StockMain {
          * 成功時：「更新が完了しました」
          * 失敗時：「更新に失敗しました」
          */
-        
+
 
         System.out.println("------------------------------------------");
         System.out.println();
@@ -342,7 +382,7 @@ public class StockMain {
          * 存在しない場合はメッセージを表示して更新処理を終了する
          * 「指定したIDの在庫は見つかりません」
          */
-        
+
 
         /*
          * TODO
@@ -350,7 +390,7 @@ public class StockMain {
          * 成功時：「削除が完了しました」
          * 失敗時：「削除に失敗しました」
          */
-        
+
 
         System.out.println("------------------------------------------");
         System.out.println();
@@ -358,46 +398,48 @@ public class StockMain {
 
     public static void main(String[] args) {
 
-        loop:
-        while (true) {
-            List<Stock> listItem = dao.findAll();
+        final String URL = "jdbc:mysql://localhost:3306/sample_shop?useSSL=false&serverTimezone=JST";
+        final String USER = "root";
+        final String PASSWORD = "kronos";
 
-            System.out.println("【在庫一覧】");
-            System.out.println(String.format("%3s", "ID") + " | " +
-                                String.format("%-20s", "ITEM") + " | " +
-                                String.format("%8s", "PRICE") + " | " +
-                                String.format("%10s", "QUANTITY") + " |");
-            System.out.println("----------------------------------------------------");
-            for (Stock item : listItem) {
-                System.out.println(String.format("%3s", item.getId()) + " | " +
-                                    String.format("%-20s", item.getItem()) + " | " +
-                                    String.format("%8s", item.getPrice()) + " | " +
-                                    String.format("%10s", item.getQuantity()) + " |");
+        try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD)) {
+
+            loop:
+            while (true) {
+                dao = new StockDAO(con);
+
+                // 在庫一覧表示
+                showList();
+
+                System.out.println("\r\n*** 処理番号を選択 ***");
+                System.out.println("1:登録　2:更新　3:削除　4:終了");
+                int select = scan.nextInt();
+
+                if (select < 1 || select > 4) {
+                    System.out.println("\r\n1～4の処理番号を入力してください");
+                    continue;
+                }
+
+                switch (select) {
+                case 1:
+                    // 在庫登録処理
+                    create();
+                    break;
+                case 2:
+                    // 在庫更新処理
+                    update();
+                    break;
+                case 3:
+                    // 在庫削除処理
+                    delete();
+                    break;
+                case 4:
+                    System.out.println("\r\nプログラムを終了します。");
+                    break loop;
+                }
             }
-
-            System.out.println("\r\n*** 処理番号を選択 ***");
-            System.out.println("1:登録　2:更新　3:削除　4:終了");
-            int select = scan.nextInt();
-
-            if (select < 1 || select > 4) {
-                System.out.println("\r\n1～4の処理番号を入力してください");
-                continue;
-            }
-
-            switch (select) {
-            case 1:
-                create();
-                break;
-            case 2:
-                update();
-                break;
-            case 3:
-                delete();
-                break;
-            case 4:
-                System.out.println("\r\nプログラムを終了します。");
-                break loop;
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
