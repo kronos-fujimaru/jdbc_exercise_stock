@@ -373,9 +373,9 @@ public class StockMain {
 
     public static void main(String[] args) {
 
-        final String URL = "jdbc:mysql://localhost:3306/sample_shop?useSSL=false&serverTimezone=JST";
+        final String URL = "jdbc:mysql://localhost:3306/sample_shop?useSSL=false";
         final String USER = "root";
-        final String PASSWORD = "kronos";
+        final String PASSWORD = "";    // TODO パスワードの設定
 
         try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD)) {
 
