@@ -175,6 +175,8 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 | public | update   | int | Stock、int | 引数のIDに紐付く在庫データを更新する。<br>戻り値として更新件数を返却する。 |
 | public | delete   | int | int | 引数のIDに紐づく在庫データを削除する。<br>戻り値として削除件数を返却する。 |
 
+コメントでTODO、または ??? となっている部分を正しく実装しなさい。
+
 ```java
 package jp.shop.dao;
 
@@ -235,6 +237,8 @@ public class StockDAO {
 
 #### StockMain.java（パッケージ：jp.shop.main）
 
+コメントでTODOとなっている部分を正しく実装しなさい。
+
 ```java
 package jp.shop.main;
 
@@ -264,7 +268,7 @@ public class StockMain {
         int quantity = scan.nextInt();
 
         // TODO Stockクラスのインスタンスを生成し、登録内容をセットする
-        ???
+        
 
         /*
          * TODO
@@ -272,7 +276,7 @@ public class StockMain {
          * 成功時：「登録が完了しました」
          * 失敗時：「登録に失敗しました」
          */
-        ???
+        
 
         System.out.println("----------------------------------------");
         System.out.println();
@@ -295,7 +299,7 @@ public class StockMain {
          * 存在しない場合はメッセージを表示して更新処理を終了する
          * 「指定したIDの在庫は見つかりません」
          */
-        ???
+        
 
         System.out.println();
         System.out.println("------ 更新内容を入力してください --------");
@@ -307,7 +311,7 @@ public class StockMain {
         int quantity = scan.nextInt();
 
         // TODO Stockクラスのインスタンスを生成し、更新内容をセットする
-        ???
+        
 
         /*
          * TODO
@@ -315,7 +319,7 @@ public class StockMain {
          * 成功時：「更新が完了しました」
          * 失敗時：「更新に失敗しました」
          */
-        ???
+        
 
         System.out.println("------------------------------------------");
         System.out.println();
@@ -338,7 +342,7 @@ public class StockMain {
          * 存在しない場合はメッセージを表示して更新処理を終了する
          * 「指定したIDの在庫は見つかりません」
          */
-        ???
+        
 
         /*
          * TODO
@@ -346,7 +350,7 @@ public class StockMain {
          * 成功時：「削除が完了しました」
          * 失敗時：「削除に失敗しました」
          */
-        ???
+        
 
         System.out.println("------------------------------------------");
         System.out.println();
