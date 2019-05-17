@@ -120,7 +120,7 @@ ID：99
 <img src="img/map.png" alt="map" width="650">
 
 
-#### STOCKテーブル
+**STOCKテーブル**
 
 sample_shopデータベースを作成し、以下のテーブルを作成する。
 
@@ -149,7 +149,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 
 <br>
 
-#### Stock.java（パッケージ：jp.shop.dto）
+**Stock.java（パッケージ：jp.shop.dto）**
 
 フィールド
 
@@ -165,7 +165,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 
 <br>
 
-#### StockDAO.java（パッケージ：jp.shop.dao）
+**StockDAO.java（パッケージ：jp.shop.dao）**
 
 | 可視性 | メソッド名 | 戻り値 | 引数 | 説明 |
 |-------|------------|-------|------|---------|
@@ -235,7 +235,7 @@ public class StockDAO {
 
 <br>
 
-#### StockMain.java（パッケージ：jp.shop.main）
+**StockMain.java（パッケージ：jp.shop.main）**
 
 コメントでTODOとなっている部分を正しく実装しなさい。
 
