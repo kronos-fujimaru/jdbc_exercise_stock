@@ -196,7 +196,7 @@ public class StockDAO {
      * findAllメソッド
      * @return List<Stock> 在庫情報
      */
-    public ??? findAll() {
+    public ??? findAll() throws SQLException {
         // TODO
     }
 
@@ -205,7 +205,7 @@ public class StockDAO {
          * @param id ID
          * @return Stock 在庫情報
          */
-    public ??? findById(???) {
+    public ??? findById(???) throws SQLException {
         // TODO
     }
 
@@ -214,7 +214,7 @@ public class StockDAO {
      * @param stock 在庫情報
      * @return int 登録件数
      */
-    public ??? create(???) {
+    public ??? create(???) throws SQLException {
         // TODO
     }
 
@@ -224,7 +224,7 @@ public class StockDAO {
      * @param id 更新対象ID
      * @return int 更新件数
      */
-    public ??? update(???) {
+    public ??? update(???) throws SQLException {
         // TODO
     }
 
@@ -233,7 +233,7 @@ public class StockDAO {
      * @param id 削除対象ID
      * @return int 削除件数
      */
-    public ??? delete(???) {
+    public ??? delete(???) throws SQLException {
         // TODO
     }
 }
@@ -273,7 +273,7 @@ public class StockMain {
     /**
      * 在庫一覧表示
      */
-    static void showList() {
+    static void showList() throws SQLException {
 
         // TODO 在庫情報を全件取得する
 
@@ -295,7 +295,7 @@ public class StockMain {
     /**
      * 在庫登録処理
      */
-    static void create() {
+    static void create() throws SQLException {
         System.out.println();
         System.out.println("【在庫登録】");
         System.out.println("------ 登録情報を入力してください ------");
@@ -325,7 +325,7 @@ public class StockMain {
     /**
      * 在庫更新処理
      */
-    static void update() {
+    static void update() throws SQLException {
         System.out.println();
         System.out.println("【在庫更新】");
         System.out.println("------ 更新するIDを入力してください ------");
@@ -368,7 +368,7 @@ public class StockMain {
     /**
      * 在庫削除処理
      */
-    static void delete() {
+    static void delete() throws SQLException {
         System.out.println();
         System.out.println("【在庫削除】");
         System.out.println("------ 削除するIDを入力してください ------");

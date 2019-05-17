@@ -220,7 +220,7 @@ public class StockMain {
     /**
      * 在庫一覧表示
      */
-    static void showList() {
+    static void showList() throws SQLException {
 
         // TODO 在庫情報を全件取得する
         List<Stock> listItem = dao.findAll();
@@ -242,7 +242,7 @@ public class StockMain {
     /**
      * 在庫登録処理
      */
-    static void create() {
+    static void create() throws SQLException {
         System.out.println();
         System.out.println("【在庫登録】");
         System.out.println("------ 登録情報を入力してください ------");
@@ -279,7 +279,7 @@ public class StockMain {
     /**
      * 在庫更新処理
      */
-    static void update() {
+    static void update() throws SQLException {
         System.out.println();
         System.out.println("【在庫更新】");
         System.out.println("------ 更新するIDを入力してください ------");
@@ -334,7 +334,7 @@ public class StockMain {
     /**
      * 在庫削除処理
      */
-    static void delete() {
+    static void delete() throws SQLException {
         System.out.println();
         System.out.println("【在庫削除】");
         System.out.println("------ 削除するIDを入力してください ------");
