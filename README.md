@@ -445,4 +445,4 @@ public class StockMain {
 }
 ```
 
-[解答例](/ans/answer.md)
+<!-- [解答例](/ans/answer.md) -->
