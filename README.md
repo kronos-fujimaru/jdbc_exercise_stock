@@ -160,8 +160,7 @@ INSERT INTO stock (item, price, quantity) VALUES ('Scissors', 350, 3);
 | private | 価格 |
 | private | 数量 |
 
-メソッド
-※フィールドに関連するsetter/getterを定義
+メソッド<br>※フィールドに関連するsetter/getterを定義
 
 <br>
 
